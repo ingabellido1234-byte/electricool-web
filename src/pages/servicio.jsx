@@ -14,7 +14,6 @@ import {
   CheckCircle, 
   Award,
   Users,
-  // Iconos para los mocks (borrar en tu local)
   Facebook, Instagram, Linkedin, Menu as MenuIcon, X, MapPin, Search, ShoppingCart, ChevronDown
 } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -29,7 +28,6 @@ export default function Servicios() {
   return (
     <div className="font-sans text-slate-800 bg-slate-50 min-h-screen flex flex-col">
       
-      {/* 1. Menú (Simulado) */}
       <Menu />
 
       <main className="flex-grow">
@@ -86,6 +84,7 @@ export default function Servicios() {
                   "Reparación de equipos industriales",
                   "Asesoría técnica especializada"
                 ]}
+                ruta = '/servicio/servicio_aire'
               />
 
               <ServiceCardDetailed 
@@ -97,6 +96,7 @@ export default function Servicios() {
                   "Sistemas de rociadores automáticos",
                   "Certificación de sistemas INDECI"
                 ]}
+                ruta='/servicio/incendios'
               />
 
               <ServiceCardDetailed 
@@ -108,6 +108,7 @@ export default function Servicios() {
                   "Sistemas de distribución de energía",
                   "Auditorías eléctricas y certificación"
                 ]}
+                ruta='/servicio/electricidad'
               />
 
               <ServiceCardDetailed 
@@ -119,6 +120,7 @@ export default function Servicios() {
                   "Mantenimiento con dosis química",
                   "Certificación y protocolo de pruebas"
                 ]}
+                ruta='/servicio/pozo-tierra'
               />
 
               <ServiceCardDetailed 
@@ -130,6 +132,7 @@ export default function Servicios() {
                   "Garantía de productos directa",
                   "Instalación profesional incluida"
                 ]}
+                ruta='/servicio/repuestos'
               />
 
               <ServiceCardDetailed 
@@ -141,6 +144,7 @@ export default function Servicios() {
                   "Mantenimiento de equipos DVR/NVR",
                   "Configuración de alertas móviles"
                 ]}
+                ruta='/servicio/camaras'
               />
 
             </div>
@@ -218,7 +222,7 @@ export default function Servicios() {
 // --- COMPONENTES AUXILIARES ---
 
 // Tarjeta de Servicio detallada (Estilo de la imagen que enviaste)
-function ServiceCardDetailed({ icon, title, features }) {
+function ServiceCardDetailed({ icon, title, features, ruta }) {
   return (
     <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 group flex flex-col h-full">
       {/* Header Azul */}
@@ -243,9 +247,9 @@ function ServiceCardDetailed({ icon, title, features }) {
 
       {/* Footer de la tarjeta con Botón */}
       <div className="p-6 pt-0 mt-auto">
-        <button className="w-full py-3 bg-slate-800 text-white font-medium rounded-lg hover:bg-blue-600 transition flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-blue-500/30 text-sm">
+        <Link to={ruta} className="w-full py-3 bg-slate-800 text-white font-medium rounded-lg hover:bg-blue-600 transition flex items-center justify-center gap-2 group-hover:shadow-lg group-hover:shadow-blue-500/30 text-sm">
           Más Información <ArrowRight size={16} />
-        </button>
+        </Link>
       </div>
     </div>
   );

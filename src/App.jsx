@@ -18,7 +18,6 @@ import Repuestos from './pages/servicios/repuestos';
 import Camaras from './pages/servicios/camaras';
 import ScrollTop from './components/scrollTop'
 import Inicio_Sesion from './pages/login/inicio_sesion'
-import Registro from './pages/login/registro'
 
 
 function App() {
@@ -46,7 +45,6 @@ function App() {
 
         <Route path="/proyecto" element={<Proyectos />} />
         <Route path='/login/inicio_sesion' element={< Inicio_Sesion/>}/>
-        <Route path='/login/inicio_sesion/registro' element={<Registro/>}/>
         <Route path="/contacto" element={<Contacto />} />
 
 

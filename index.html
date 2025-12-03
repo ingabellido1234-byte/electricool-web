@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>electricool-web</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    
+    <df-messenger
+      intent="WELCOME"
+      chat-title="Asistente ElectriCool"
+      agent-id="a3296d92-07ba-4e1b-8b15-67ac1248d954"
+      language-code="es"
+      chat-icon="" 
+    ></df-messenger>
+
+    <style>
+      /* --- PERSONALIZACIÓN DEL CHATBOT --- */
+      df-messenger {
+        --df-messenger-bot-message: #f1f5f9;
+        --df-messenger-button-titlebar-color: #2563eb; /* Azul ElectraCool */
+        --df-messenger-chat-background-color: #ffffff;
+        --df-messenger-font-color: #1e293b;
+        --df-messenger-send-icon: #2563eb;
+        --df-messenger-user-message: #dbeafe; /* Azul claro usuario */
+        
+        /* Posición del botón flotante */
+        z-index: 9999;
+      }
+
+      /* HACK: Intentar forzar una X en lugar de la flecha de minimizar */
+      /* Nota: Esto afecta al icono de cerrar/minimizar dentro del Shadow DOM */
+      df-messenger::part(button) {
+        /* Si tu logo tiene fondo blanco, esto ayuda a que se vea mejor */
+        background-color: white; 
+        border: 2px solid #2563eb;
+      }
+    </style>
+  </body>
+</html>

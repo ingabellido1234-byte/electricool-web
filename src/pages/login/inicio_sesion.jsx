@@ -22,7 +22,7 @@ export default function Login() {
       await signInWithEmailAndPassword(auth, formData.email, formData.password);
       
       // Si funciona, redirigir al panel
-      navigate('/dashboard'); 
+      navigate('/inicio_sesion/dashboard'); 
     } catch (error) {
       // Si falla (contraseña mal, usuario no existe), mostramos error
       console.error(error);
@@ -55,7 +55,7 @@ export default function Login() {
                 type="email"
                 name="email"
                 required
-                placeholder="admin@electracool.com"
+                placeholder="ejemplo@gmail.com"
                 className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none"
                 onChange={handleChange}
               />

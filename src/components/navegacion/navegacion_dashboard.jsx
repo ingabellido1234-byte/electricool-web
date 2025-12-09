@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Users, FileText, Settings, LogOut } from 'lucide-react';
+import { LayoutDashboard, Users, FileText, Settings, LogOut, Package, Calendar } from 'lucide-react';
 
 export default function Sidebar({ isOpen, handleLogout }) {
   const location = useLocation();
@@ -36,10 +36,22 @@ export default function Sidebar({ isOpen, handleLogout }) {
         <Link to="/dashboard/clientes" className={`${baseClass} ${isActive('/dashboard/clientes') ? activeClass : inactiveClass}`}>
           <Users size={20} /> Clientes
         </Link>
+
+        <Link to="/dashboard/inventario" className={`${baseClass} ${isActive('/dashboard/inventario') ? activeClass : inactiveClass}`}>
+          <Package size={20} /> Inventario / Productos
+        </Link>
+
+        <Link to="/dashboard/agenda" className={`${baseClass} ${isActive('/dashboard/agenda') ? activeClass : inactiveClass}`}>
+          <Calendar size={20} /> Agenda Visitas
+        </Link>
+
+        <Link to="/dashboard/tecnicos" className={`${baseClass} ${isActive('/dashboard/tecnicos') ? activeClass : inactiveClass}`}>
+          <Package size={20} /> Técnicos
+        </Link>
         
-        <div className={`${baseClass} ${inactiveClass} cursor-not-allowed opacity-50`}>
+        <Link to="/dashboard/configuracion" className={`${baseClass} ${isActive('/dashboard/configuracion') ? activeClass : inactiveClass}`}>
           <Settings size={20} /> Configuración
-        </div>
+        </Link>
       </nav>
 
       {/* Logout */}

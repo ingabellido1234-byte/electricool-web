@@ -20,6 +20,10 @@ import Dashboard from './pages/login/dashboard'
 import Cotizacion from './pages/login/cotizacion'
 import Clientes from './pages/login/clientes'
 import ProtectedRoute from './components/ProtectedRoute';
+import Productos from './pages/login/inventario';
+import Agenda from './pages/login/agenda';
+import Tecnicos from './pages/login/tecnicos';
+import Configuracion from './pages/login/configuracion';
 
 
 function App() {
@@ -56,6 +60,30 @@ function App() {
             <Clientes />
           </ProtectedRoute>
           } />
+
+        <Route path="/dashboard/inventario" element={
+          <ProtectedRoute>
+            <Productos />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/dashboard/agenda" element={
+          <ProtectedRoute>
+            <Agenda />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/dashboard/tecnicos" element={
+          <ProtectedRoute>
+            <Tecnicos />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/dashboard/configuracion" element={
+          <ProtectedRoute>
+            <Configuracion />
+          </ProtectedRoute>
+        } />
 
 
 
